@@ -19,8 +19,11 @@ hidden2(); // returns 1
 
 function hiddenCounter() {
   let count = 0;
-  return () => count += 1;
+  let counter = () => count += 1;
+  return counter;
 }
+
+
 
 let hidden1 = hiddenCounter(); //returns a function
 hidden1(); // returns 1
