@@ -31,10 +31,16 @@ function recVolume(height, count = 3) {
   return volume = function (side) {
     if (result.length < 3) {
       result.push(side);
-      console.log(result)
+
+    }
+     if (result.length === 3) {
+      const final = result.reduce((fVolume, sides) => fVolume *= sides)
+      return final;
+    } else {
+      return volume
     }
   }
-
+ //return volume
 }
 
 //Example 1:
