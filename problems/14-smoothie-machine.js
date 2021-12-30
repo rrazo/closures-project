@@ -8,6 +8,16 @@ function.
 
 See below for examples:
 
+***********************************************************************/
+
+const smoothieMachine = (...ingredients) => {
+  return function (...moreIngredients) {
+    ingredients = ingredients.concat(moreIngredients);
+
+    return "I'm having a smoothie with " + ingredients.join(" and ");
+  }
+};
+
 let smoothie1 = smoothieMachine();
 
 console.log(smoothie1("milk"));
@@ -20,10 +30,6 @@ console.log(smoothie1("honey", "pears", "berries"));
 let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
-***********************************************************************/
-
-// your code here
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = smoothieMachine;
